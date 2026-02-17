@@ -527,3 +527,9 @@ type: cv
     </li>
   </ul>
 </div>
+
+<div class="print-only">
+  <p>
+    <small>This CV is compacted for print. Expandable technical details and additional projects are hidden. For the full interactive version with all details, visit <a href="https://lillecarl.com/cv">lillecarl.com/cv</a></small>
+  </p>
+</div>

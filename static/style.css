@@ -195,9 +195,17 @@ time {
   100% { opacity: 1; }
 }
 
+.print-only {
+  display: none;
+}
+
 @media print {
   nav, .theme-toggle, .print-hide, .photo-swap {
     display: none !important;
+  }
+
+  .print-only {
+    display: block;
   }
 
   body {
