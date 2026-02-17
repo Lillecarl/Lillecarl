@@ -105,7 +105,7 @@ type: cv
   <div class="cv-header-info">
     <h1>Carl Andersson</h1>
     <p>
-      <a href="/contact">contact</a><br>
+      <a href="/contact" class="print-hide">contact</a><a href="#" class="print-only">&#99;&#97;&#114;&#108;&#64;&#112;&#111;&#115;&#116;&#115;&#112;&#97;&#99;&#101;&#46;&#110;&#101;&#116;</a>
       <a href="https://github.com/lillecarl">github/lillecarl</a><br>
       <a href="https://www.linkedin.com/in/carlops/">linkedin/carlops</a>
     </p>
