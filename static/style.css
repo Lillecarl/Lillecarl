@@ -208,6 +208,10 @@ time {
     margin: 0;
     padding: 0;
   }
+
+  a:visited {
+    color: var(--link);
+  }
 }
 
 /* Print styles moved to global stylesheet above */
