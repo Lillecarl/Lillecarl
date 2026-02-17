@@ -130,7 +130,7 @@ type: cv
   <li>Prometheus</li>
   <li>GitHub Actions</li>
   <li>VXLAN/EVPN</li>
-  <li><strong>Terraform</strong></li>
+  <li><strong>Terraform/Tofu</strong></li>
   <li>Docker</li>
   <li>Cilium</li>
   <li>PostgreSQL</li>
@@ -163,18 +163,18 @@ type: cv
   <p>
     Building a production Kubernetes environment on VMware for Evolvit. Full platform including ClusterAPI-managed
     control plane, Cilium networking, OIDC authentication and all bells & whistles. Training staff on Kubernetes, Nix,
-    and Linux administration. Project on hold due to client capacity constraints.
+    and Linux administration.
   </p>
 </div>
 
 <div class="nobreak-page">
   <h3 class="no-margin-bottom">Helicon - Infrastructure Consultant</h3>
-  <p class=no-margin-top><small>Sep 2023 - Feb 2025</small></p>
+  <p class="no-margin-top"><small>Sep 2023 - Feb 2025</small></p>
 
   <h4 class="no-margin-bottom">Stockholm Exergi</h4>
   <ul class="tags">
     <li>AWS</li>
-    <li><strong>Terraform</strong></li>
+    <li><strong>Terraform/Tofu</strong></li>
     <li><s>Nomad</s></li>
     <li><s>Consul</s></li>
     <li><s>Vault</s></li>
@@ -185,8 +185,7 @@ type: cv
   <p>
     Managed HashiCorp-based infrastructure in AWS. Led Terraform refactoring to
     improve state management and infrastructure reliability. Recommended Kubernetes
-    migration path which client later adopted. Developer tooling delivered with
-    Nix
+    migration path which client later adopted. Developed tooling using Nix for cross-team developer environments.
   </p>
 
   <h4>Kraftringen</h4>
@@ -212,7 +211,7 @@ type: cv
   <ul class="tags">
     <li><s>OpenStack</s></li>
     <li>AWS</li>
-    <li><strong>Terraform</strong></li>
+    <li><strong>Terraform/Tofu</strong></li>
     <li><s>SaltStack</s></li>
     <li><s>Ansible</s></li>
     <li><s>Splunk</s></li>
@@ -240,7 +239,7 @@ type: cv
     <li><strong>Kubernetes</strong></li>
     <li>AWS</li>
     <li>EKS</li>
-    <li><strong>Terraform</strong></li>
+    <li><strong>Terraform/Tofu</strong></li>
     <li><s>RKE2</s></li>
     <li><s>Splunk</s></li>
     <li>GitLab</li>
@@ -262,9 +261,7 @@ type: cv
       <p>
         Deployed Kubernetes on-premise using RKE2 on Ubuntu with Ansible to consolidate with previously deployed AWS
         infrastructure. Kubernetes replaced a custom SaltStack based "scheduler" that installed systemd units.
-        Collaborated with application developers enabling them to write control-plane software (Use Kubernetes jobs to
-        run
-        heavy processing jobs)
+        Collaborated with application developers to enable control-plane software that uses Kubernetes jobs for heavy media processing workloads
       </p>
       See more at <a href="https://www.sdnit.se/kundcase-viaplay">SDNits website</a>
     </details>
@@ -297,9 +294,7 @@ type: cv
     <details>
       <summary><strong>Key achievements:</strong></summary>
       <ul>
-        <li><strong>VMware deployment:</strong> Deployed vSphere + vCloud + NSX-T + vSAN stack to replace a unreliable
-          Hyper-V
-          S2D cluster. Customers got self-service via vCloud portal</li>
+        <li><strong>VMware deployment:</strong> Deployed vSphere + vCloud + NSX-T + vSAN stack to replace an unreliable Hyper-V S2D cluster. Customers got self-service via vCloud portal</li>
         <li><strong>Datacenter consolidation:</strong> Migrated Dialect conglomerate hosting from InterXion to Skövde
           datacenter. Live-migrated VMs over stretched L2, then physically relocated and remounted servers to reuse
           hardware
@@ -318,9 +313,8 @@ type: cv
   <p class="no-margin-top"><small>2014 - 2019</small></p>
   <div class="print-hide">
     <p>
-      IT support and Windows Server administration serving 50+ SME customers (5-50 users each). Built high-quality
-      support
-      function from scratch together with one colleague, as of 2025 the support team is 15+. Specialized in MikroTik
+      IT support and Windows Server administration serving 50+ SME customers (5-50 users each). Built high-quality support
+      from scratch together with one colleague; by 2025 the team had grown to 15+ members. Specialized in MikroTik
       networking including site-to-datacenter tunnel infrastructure. PowerShell automation for cross-customer
       environment
       provisioning. This role established the networking foundation that led to my later datacenter and infrastructure
@@ -457,7 +451,7 @@ type: cv
 </div>
 
 <div class="nobreak-page">
-  <h3>Crossfaction Battlegrounds (World of Warcraft)</h3>
+  <h3>Crossfaction Battlegrounds</h3>
   <div class="print-hide">
     <p>
       First public implementation of crossfaction PvP queuing for World of Warcraft
@@ -524,8 +518,10 @@ type: cv
   </ul>
 </div>
 
+<hr class="print-only">
+
 <div class="print-only">
   <p>
-    <small>This CV is compacted for print. Expandable technical details and additional projects are hidden. For the full interactive version with all details, visit <a href="https://lillecarl.com/cv">lillecarl.com/cv</a></small>
+    <small>This document is compacted for print. For more details, please visit <a href="https://lillecarl.com/cv">lillecarl.com/cv</a></small>
   </p>
 </div>
