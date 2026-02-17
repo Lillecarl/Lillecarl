@@ -99,10 +99,6 @@ type: cv
   details p:first-of-type {
     margin-top: 0;
   }
-
-  @media print {
-    font-size: 11pt;
-  }
 </style>
 
 <div class="cv-header">
