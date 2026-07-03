@@ -151,8 +151,21 @@ type: cv
 <h2>EXPERIENCE</h2>
 
 <div class="nobreak-page">
+  <h3 class="no-margin-bottom">Dynamist - Systems specialist</h3>
+  <p class="no-margin-top"><small>Jul 2026 - now()</small></p>
+  <ul class="tags">
+    <li><strong>Nix</strong></li>
+    <li><strong>Kubernetes</strong></li>
+    <li><strong>NixOS</strong></li>
+  </ul>
+  <p>
+    Building on my previous freelance projects: • nixkube(nix-csi) • pynixd • easykubenix to expant Dynamists market position for delivering software scalably and reliably.
+  </p>
+</div>
+
+<div class="nobreak-page">
   <h3 class="no-margin-bottom">Evolvit - Infrastructure Consultant</h3>
-  <p class="no-margin-top"><small>Aug 2025 - Present (on hold)</small></p>
+  <p class="no-margin-top"><small>Oct 2025 - Mar 2026</small></p>
   <ul class="tags">
     <li>ClusterAPI</li>
     <li><strong>Kubernetes</strong></li>
