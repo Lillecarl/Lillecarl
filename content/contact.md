@@ -28,4 +28,4 @@ I try to respond to emails [soon-ish](https://wowwiki-archive.fandom.com/wiki/So
 - Open source collaboration
 - Technical discussions
 - Consulting through Dynamist, my current employer
-- Interesting projects involving infrastructure, Nix/OS or Kubernetes
+- Interesting projects involving infrastructure, Nix/NixOS or Kubernetes
