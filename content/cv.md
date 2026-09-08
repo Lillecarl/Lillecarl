@@ -159,7 +159,10 @@ type: cv
     <li><strong>NixOS</strong></li>
   </ul>
   <p>
-    Building on my previous freelance projects: • nixkube(nix-csi) • pynixd • easykubenix to expant Dynamists market position for delivering software scalably and reliably.
+    Building on my previous freelance projects: • nixkube(nix-csi) • pynixd • easykubenix to expand Dynamist's market position for delivering software scalably and reliably.
+    These projects, plus new ones, now live together under
+    <a href="https://github.com/nixidae/nixidae">nixidae</a>, an umbrella project for Nix, Python and
+    Kubernetes tooling.
   </p>
 </div>
 
@@ -352,6 +355,62 @@ type: cv
 </div>
 
 <h2>PROJECTS</h2>
+
+<div class="nobreak-page">
+  <h3><a href="https://github.com/nixidae/nixidae">nixidae</a></h3>
+  <div class="print-hide">
+    <p>
+      Umbrella project for Nix + Python, and Nix + Python + Kubernetes, tooling "and friends".
+      One checkout holds several projects as submodules, pinned to a known-good set of commits, so a
+      change that crosses project boundaries can be made, built and tested together instead of drifting apart.
+    </p>
+    <details>
+      <summary>Technical details</summary>
+      <p><strong>Projects in the collection:</strong></p>
+      <ul>
+        <li><strong>nanopynix</strong> - Drive Nix from Python, batteries included</li>
+        <li><strong>pynixd</strong> - The Nix daemon protocol in Python</li>
+        <li><strong>easykubenix</strong> - Kubernetes manifests generated via the NixOS module system</li>
+        <li><strong>nixkube (nix-csi)</strong> - CSI driver that mounts the Nix store into pods</li>
+        <li><strong>flake-compatish</strong> - Reads a flake this project does not own</li>
+        <li><strong>user-mode-nixos</strong> - NixOS integration tests on User-Mode Linux, no KVM required</li>
+      </ul>
+      <p>Each project keeps its own repository and history. The <strong>umbrella</strong> tool pins them
+        to a known-good set of commits, so cross-project changes build and test together.</p>
+    </details>
+  </div>
+</div>
+
+<div class="nobreak-page">
+  <h3><a href="https://github.com/lillecarl/pyterm">pyterm</a></h3>
+  <div class="print-hide">
+    <p>
+      Umbrella project for pymux—a souped-up tmux reimplementation in Python—and its stack: ptterm,
+      pyte, txterm, ptyhost, and patches to prompt-toolkit, developed together. Supports a range of
+      keyboard and graphics protocols.
+    </p>
+    <details>
+      <summary>Technical details</summary>
+      <p><strong>Projects in the collection:</strong></p>
+      <ul>
+        <li><strong>pymux</strong> - Terminal multiplexer, arranges several terminals</li>
+        <li><strong>ptterm</strong> - Draws one terminal with prompt-toolkit</li>
+        <li><strong>txterm</strong> - Draws one terminal with Textual</li>
+        <li><strong>ptyhost</strong> - Runs a program and carries its bytes</li>
+        <li><strong>pyte</strong> - Terminal screen parsing and state</li>
+        <li><strong>prompt-toolkit</strong> - The toolkit underneath it all, patched for render performance</li>
+      </ul>
+      <p><strong>Test suite:</strong> Differential and conformance-driven rather than hand-written
+        expectations. The emulator is judged against six independent implementations (kitty, WezTerm,
+        Alacritty, Ghostty, libvterm, xterm.js) and against borrowed suites—xterm's esctest, vttest,
+        libvterm and Alacritty reference tests—each run both directly and through a pymux pane, so the
+        diff is exactly what the multiplexer adds. Pixel-level checks screenshot a real terminal on its
+        own Wayland display with and without pymux and subtract the images; Hypothesis property tests
+        hold the resize/reflow invariants; every check is a hermetic Nix derivation that keeps the
+        artefacts of a failing run.</p>
+    </details>
+  </div>
+</div>
 
 <div class="nobreak-page">
   <h3><a href="https://github.com/lillecarl/nix-csi">nix-csi</a></h3>
