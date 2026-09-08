@@ -1,4 +1,47 @@
 {{ define "main" }}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Carl Andersson",
+  "alternateName": "lillecarl",
+  "jobTitle": "DevOps / Site Reliability Engineer",
+  "description": "DevOps/Site Reliability engineer with 10+ years of experience across infrastructure, networking, and platform engineering.",
+  "url": "{{ .Permalink }}",
+  "image": "{{ "cv-photo.png" | absURL }}",
+  "sameAs": [
+    "https://github.com/lillecarl",
+    "https://www.linkedin.com/in/carlops/",
+    "https://discord.com/users/168005363264651264"
+  ],
+  "worksFor": {
+    "@type": "Organization",
+    "name": "Dynamist"
+  },
+  "knowsAbout": [
+    "Kubernetes", "Python", "BGP", "Nix", "NixOS", "Prometheus", "GitHub Actions",
+    "VXLAN", "EVPN", "Terraform", "OpenTofu", "Docker", "Cilium", "PostgreSQL",
+    "FRR", "Linux", "AWS", "GitLab", "Cumulus Linux", "MikroTik", "Grafana",
+    "ClusterAPI", "PowerShell", "C#", "IPv6", "VMware", "QEMU", "libvirt",
+
+    "PostgREST", "VictoriaMetrics",
+
+    "cert-manager", "trust-manager", "Cluster Autoscaler", "Vertical Pod Autoscaler",
+    "Kyverno", "Argo CD", "Argo Workflows", "Argo Rollouts", "Argo Events",
+    "Backstage", "Grafana Alloy", "CoreDNS", "k8s-gateway", "external-dns",
+    "External Secrets Operator", "Gateway API", "Traefik", "OAuth2 Proxy", "OIDC",
+    "Keycloak", "CloudNativePG", "Barman Cloud", "pgAdmin", "OpenSearch", "Data Prepper",
+    "SeaweedFS", "SeaweedFS Operator", "Garage", "Container Object Storage Interface (COSI)",
+    "AWS EBS CSI Driver", "AWS EFS CSI Driver", "Azure Disk CSI Driver", "Azure File CSI Driver",
+    "OpenStack Cinder CSI", "OpenStack Cloud Controller Manager", "Hetzner CSI", "csi-driver-smb",
+    "local-path-provisioner", "Metrics Server", "kube-proxy", "MetalLB", "chaoskube",
+    "Reflector", "Reloader", "Sealed Secrets", "kro", "Kubenix", "kube-aws-iam-controller",
+    "kube-prometheus-stack", "Headlamp", "Forgejo", "Bitwarden", "kluctl", "devenv",
+
+    "Disko", "Home Manager", "Terranix", "SOPS", "age encryption"
+  ]
+}
+</script>
 <article class="cv">
   {{ .Content }}
 </article>
