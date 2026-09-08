@@ -27,5 +27,5 @@ I try to respond to emails [soon-ish](https://wowwiki-archive.fandom.com/wiki/So
 
 - Open source collaboration
 - Technical discussions
-- Remote job opportunities
+- Consulting through Dynamist, my current employer
 - Interesting projects involving infrastructure, Nix/OS or Kubernetes
