@@ -42,7 +42,7 @@ with pyedit.VFS():
     pyedit.edit("src/app.py", "import json", "import json\nimport os")
 ```
 
-A `pyedit.VFS()` scope is an independent overlay on top of disk truth. It cannot see the parent's staged state, and sibling scopes cannot see each other. When the scope exits, pyedit merges it with **git's own three-way merge**: disk is the ancestor, the parent is ours, the scope is theirs. Edits in different regions merge clean no matter what line numbers each one was written against; two edits to neighbouring lines belong in one scope, and git says so.
+A `pyedit.VFS()` scope is an independent overlay on top of disk truth. It cannot see the parent's staged state, and sibling scopes cannot see each other. When the scope exits, pyedit merges it with **git's own three-way merge**: disk is the ancestor, the parent is ours, the scope is theirs. Edits in different regions merge clean no matter what line numbers each one was written against; two edits to neighboring lines belong in one scope, and git says so.
 
 That is the whole trick — **line numbers never enter into it**. A conflict is a `Collision`, never a guess, and nothing is staged before every conflict is known. (Rename detection rides along, like git's: a delete is paired with a similar add so an edit follows the file to its new name. `--no-rename-detection` turns it off.)
 

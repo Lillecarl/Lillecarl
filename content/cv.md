@@ -315,7 +315,7 @@ type: cv
           datacenter. Live-migrated VMs over stretched L2, then physically relocated and remounted servers to reuse
           hardware
         </li>
-        <li><strong>Network modernisation:</strong> Continued L2 removal for remaining edge cases, deployed EVPN on
+        <li><strong>Network modernization:</strong> Continued L2 removal for remaining edge cases, deployed EVPN on
           Cumulus
           Linux (Mellanox + Broadcom hardware) for appropriate L2 stretching, initiated IPv6 rollout</li>
         <li><strong>Backup infrastructure:</strong> Deployed Cohesity for VMware and legacy Hyper-V workloads</li>
@@ -407,7 +407,7 @@ type: cv
         diff is exactly what the multiplexer adds. Pixel-level checks screenshot a real terminal on its
         own Wayland display with and without pymux and subtract the images; Hypothesis property tests
         hold the resize/reflow invariants; every check is a hermetic Nix derivation that keeps the
-        artefacts of a failing run.</p>
+        artifacts of a failing run.</p>
     </details>
   </div>
 </div>
