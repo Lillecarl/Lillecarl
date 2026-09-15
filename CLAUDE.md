@@ -15,8 +15,11 @@ direnv allow  # or: nix-shell
 # Local development server
 hugo server
 
+# Spell check (typos); runs in CI before deploy
+nix build --file . checks
+
 # Build for production
-hugo --gc --minify
+nix build --file . site -o public
 ```
 
 ## Architecture

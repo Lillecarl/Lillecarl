@@ -23,34 +23,26 @@ defaults:
 jobs:
   build:
     runs-on: ubuntu-latest
-    env:
-      HUGO_VERSION: 0.139.0
     steps:
-      - name: Install Hugo CLI
-        run: |
-          wget -O ${{ runner.temp }}/hugo.deb https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_linux-amd64.deb \
-          && sudo dpkg -i ${{ runner.temp }}/hugo.deb
-
       - name: Checkout
         uses: actions/checkout@v4
+
+      - name: Install Nix
+        # default.nix falls back to <nixpkgs> when /etc/nixpkgs is
+        # absent, which is always true on a runner: the action puts
+        # the unstable channel on NIX_PATH.
+        uses: cachix/install-nix-action@master
         with:
-          submodules: recursive
-          fetch-depth: 0
+          nix_path: nixpkgs=channel:nixpkgs-unstable
+        timeout-minutes: 15
 
-      - name: Setup Pages
-        id: pages
-        uses: actions/configure-pages@v5
-
-      - name: Build with Hugo
-        env:
-          HUGO_CACHEDIR: ${{ runner.temp }}/hugo_cache
-          HUGO_ENVIRONMENT: production
-          TZ: America/Los_Angeles
+      - name: Check and build
+        # The spell checks fail the job before anything deploys. The
+        # same derivations run locally: `nix build --file . checks`.
         run: |
-          hugo \
-            --gc \
-            --minify \
-            --baseURL "${{ steps.pages.outputs.base_url }}/"
+          nix build --file . checks
+          nix build --file . site -o public
+        timeout-minutes: 30
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3

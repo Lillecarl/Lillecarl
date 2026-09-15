@@ -1,2 +1,4 @@
-public/
+public
+result
+result-*
 .direnv/

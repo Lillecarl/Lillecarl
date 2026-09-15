@@ -1,0 +1,16 @@
+# Words this site means to spell its own way; everything else should
+# pass the dictionary.
+
+[default]
+locale = "en-us"
+
+[default.extend-words]
+# Deliberate, in hello-world.md.
+"hypocracy" = "hypocracy"
+# Azure Kubernetes Service.
+"AKS" = "AKS"
+# Small and medium-sized enterprise.
+"SME" = "SME"
+
+[files]
+extend-exclude = [".direnv", ".jj", "public", "resources"]

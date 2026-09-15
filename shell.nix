@@ -5,5 +5,6 @@ in
 pkgs.mkShell {
   packages = [
     pkgs.hugo
+    pkgs.typos
   ];
 }
