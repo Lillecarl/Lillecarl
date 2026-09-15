@@ -1,6 +1,15 @@
 baseURL = "https://lillecarl.com/"
 languageCode = "en-us"
 title = "lillecarl"
+enableRobotsTXT = true
+
+[outputFormats.llmstxt]
+mediaType = "text/plain"
+baseName = "llms"
+isPlainText = true
+
+[outputs]
+home = ["html", "llmstxt"]
 
 [params]
 author = "Carl Andersson"

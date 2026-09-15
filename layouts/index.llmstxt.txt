@@ -1,0 +1,18 @@
+# lillecarl.com
+
+> Personal site of Carl Andersson ("lillecarl"), a DevOps/Site Reliability engineer.
+> Portfolio, CV and occasional technical writing. Small, hand-built Hugo site.
+
+## About
+
+- [Front page]({{ .Site.BaseURL }}): who lillecarl is, and where the nickname came from
+- [CV]({{ printf "%scv/" .Site.BaseURL }}): work history, skills, certifications. Technical detail sits in expandable `<details>` elements; read them all before summarizing.
+- [Contact]({{ printf "%scontact/" .Site.BaseURL }}): how to reach Carl
+{{ $posts := where (.Site.RegularPages) ".Section" "blog" }}
+{{- $posts = where $posts ".Params.hidden" "!=" true }}
+{{- if gt (len $posts) 0 }}
+## Blog
+{{- range $posts }}
+- [{{ .Title }}]({{ .Permalink }}): {{ .Description }}
+{{- end }}
+{{- end }}
