@@ -671,6 +671,8 @@ type: cv
   <ul>
     <li><a href="https://github.com/lillecarl/dinix"><strong>dinix</strong></a> - Render dinit service configurations
       using Nix</li>
+    <li><a href="https://github.com/lillecarl/ghanix"><strong>ghanix</strong></a> - Write GitHub Actions workflows
+      as NixOS modules; takes <code>lib</code> and nothing else. Early days—not even half-finished.</li>
     <li><strong>RC-Butiken</strong> - C# sync daemon for 20,000+ SKUs from supplier to Shopify. SQLite state tracking
       with
       daily diffing to handle API rate limits. Built inventory/price change reports for strategic ordering and crawled
