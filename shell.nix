@@ -1,5 +1,5 @@
 let
-  flake = import ./default.nix {};
+  flake = import ./default.nix;
   pkgs = import flake.inputs.nixpkgs {};
 in
 pkgs.mkShell {
