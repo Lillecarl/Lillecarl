@@ -620,6 +620,18 @@ type: cv
 </div>
 
 <div class="nobreak-page">
+  <h3><a href="https://github.com/lillecarl/grpclib-transports">grpclib-transports</a></h3>
+  <div class="print-hide">
+    <p>
+      gRPC over arbitrary-ish transports: grpclib client and server sessions over custom asyncio
+      transports—stdio subprocess pipes, SSH sessions, Unix-domain sockets, and multiprocessing
+      pipe pairs. Published library, documented at
+      <a href="https://lillecarl.github.io/grpclib-transports/">lillecarl.github.io/grpclib-transports</a>.
+    </p>
+  </div>
+</div>
+
+<div class="nobreak-page">
   <h3>Crossfaction Battlegrounds</h3>
   <div class="print-hide">
     <p>
