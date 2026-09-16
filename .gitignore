@@ -2,3 +2,10 @@ public
 result
 result-*
 .direnv/
+__pycache__/
+*.py[cod]
+.venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+*.egg-info/
