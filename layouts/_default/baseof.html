@@ -8,6 +8,13 @@
   <main>
     {{- block "main" . }}{{- end }}
   </main>
+  <footer>
+    {{- with site.GetPage "blog" }}
+    {{- with .OutputFormats.Get "rss" }}
+    <p><a href="{{ .RelPermalink }}">rss</a></p>
+    {{- end }}
+    {{- end }}
+  </footer>
   <script>
     (function() {
       const btn = document.getElementById('theme-toggle');
