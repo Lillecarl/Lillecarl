@@ -13,4 +13,5 @@ locale = "en-us"
 "SME" = "SME"
 
 [files]
-extend-exclude = [".direnv", ".jj", "public", "resources"]
+# static/my.pub is an SSH public key: base64, not English.
+extend-exclude = [".direnv", ".jj", "public", "resources", "static/my.pub"]

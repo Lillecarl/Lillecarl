@@ -5,9 +5,13 @@
       flake = false;
     };
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    # The spell check's nixpkgs. default.nix never overrides it, so
+    # every machine runs the same typos and the same dictionary; the
+    # site build above uses the fleet pin.
+    nixpkgs-check.url = "github:NixOS/nixpkgs/nixos-unstable";
   };
 
-  outputs = { self, nixpkgs, ... }:
+  outputs = { self, nixpkgs, nixpkgs-check, ... }:
     let
       systems = [ "x86_64-linux" "aarch64-linux" "x86_64-darwin" "aarch64-darwin" ];
       forAllSystems = nixpkgs.lib.genAttrs systems;
@@ -43,14 +47,13 @@
         });
 
       checks = forAllSystems (system:
-        let pkgs = nixpkgs.legacyPackages.${system}; in
         {
           # crate-ci/typos. _typos.toml carries the words the site
           # means to spell its own way.
-          typos = pkgs.stdenv.mkDerivation {
+          typos = (nixpkgs-check.legacyPackages.${system}).stdenv.mkDerivation {
             name = "typos-check";
             inherit src;
-            nativeBuildInputs = [ pkgs.typos ];
+            nativeBuildInputs = [ nixpkgs-check.legacyPackages.${system}.typos ];
             buildPhase = "typos .";
             installPhase = "touch $out";
           };
