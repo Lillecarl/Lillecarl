@@ -557,6 +557,45 @@ type: cv
 </div>
 
 <div class="nobreak-page">
+  <h3><a href="https://github.com/lillecarl/pyedit">pyedit</a></h3>
+  <div class="print-hide">
+    <p>
+      A Python editing tool for AI agents: an edit script runs against contextual VFSs—in-memory
+      overlays where every edit is written against the file as first read—so agents can discard
+      line number considerations entirely. Git's own three-way merge reconciles the scopes, and
+      every change comes out as git-canonical apply and undo patches, written and replayed by
+      in-memory libgit2.
+    </p>
+    <details>
+      <summary>Technical details</summary>
+      <p><strong>Model:</strong> staged state lives in memory; one function writes to disk. A dry-run
+        is not a second code path—it is a run that never called apply. The staged state prints as a
+        unified diff for review; <code>--apply</code> is the only thing that touches disk, and an
+        applied run prints an undo id that reverses the whole thing.</p>
+      <ul>
+        <li><strong>Scopes, no drift:</strong> <code>with pyedit.VFS()</code> opens an independent
+          overlay over disk truth; on exit git merges it (disk is ancestor, parent is ours, scope is
+          theirs). Line numbers never enter it: a conflict is a <code>Collision</code>, never a guess,
+          and rename detection follows an edit to the file's new name.</li>
+        <li><strong>git does the paperwork:</strong> dry-run and undo patches are git-canonical,
+          written and applied by libgit2 on a mempack—no Python parses a diff on the replay path,
+          so line numbers are exact by construction.</li>
+        <li><strong>Syntax gate:</strong> staged text is parsed before it is shown—<code>compile()</code>
+          for Python, tree-sitter for seventeen languages (Go, Rust, C, C++, Nix, Bash, ...);
+          applying known-broken syntax refuses without <code>--force</code>. tree-sitter also serves
+          position queries and file outlines; rope does Python renames, a real language server the rest.</li>
+        <li><strong>Speaks foreign patches:</strong> OpenAI apply_patch envelopes, libgit2-exact git
+          diffs, and unified diffs anchored by search—because an agent's <code>@@</code> numbers are a
+          suggestion, not a promise. One hunk that will not anchor fails the whole input.</li>
+      </ul>
+      <p><strong>Rails:</strong> fail closed, loud errors, a watchdog that kills hung runs and dumps
+        every thread's stack, and stored diffs at 0600. Round-trip tested byte for byte: text,
+        create, delete, binary, symlink, no-EOL.</p>
+    </details>
+  </div>
+</div>
+
+<div class="nobreak-page">
   <h3>Crossfaction Battlegrounds</h3>
   <div class="print-hide">
     <p>
