@@ -1,6 +1,9 @@
 public
 result
 result-*
+render-result
+site-tmp
+views
 .direnv/
 __pycache__/
 *.py[cod]
