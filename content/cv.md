@@ -596,6 +596,30 @@ type: cv
 </div>
 
 <div class="nobreak-page">
+  <h3><a href="https://github.com/lillecarl/pyjj">pyjj</a></h3>
+  <div class="print-hide">
+    <p>
+      Python bindings, a CLI, and a Textual TUI for Jujutsu (jj). Mostly an exercise in pyo3 and
+      agent-driven development, with self-verification as the point: each project verifies itself
+      in its own Nix build, and the binding-surface documentation is re-checked against every
+      jj_lib release it pins.
+    </p>
+    <details>
+      <summary>Technical details</summary>
+      <ul>
+        <li><strong>pyjj-bindings</strong> - Rust/PyO3 crate around jj_lib, arriving as a normal
+          crates.io dependency—no jj monorepo source in the repo at all</li>
+        <li><strong>pyjj</strong> - pure Python, wraps the bindings in a pythonic API for consumers</li>
+        <li><strong>pyjj-cli</strong> - CLI on top of pyjj</li>
+        <li><strong>pyjjui</strong> - Textual TUI on top of pyjj</li>
+      </ul>
+      <p>Split out of the jj monorepo so each project's Nix build is genuinely self-contained—its
+        own directory is its <code>src</code>, full stop.</p>
+    </details>
+  </div>
+</div>
+
+<div class="nobreak-page">
   <h3>Crossfaction Battlegrounds</h3>
   <div class="print-hide">
     <p>
