@@ -370,10 +370,10 @@ type: cv
       <ul>
         <li><strong>nanopynix</strong> - Drive Nix from Python, batteries included</li>
         <li><strong>pynixd</strong> - The Nix daemon protocol in Python</li>
-        <li><strong>easykubenix</strong> - Kubernetes manifests generated via the NixOS module system</li>
+        <li><strong>easykubenix</strong> - Kubernetes manifests generated via the NixOS module system, plus OpenTofu management: cluster provisioning and day2 (infra on top of what's deployed), with Nix derivations for all OpenTofu registry providers</li>
         <li><strong>nixkube (nix-csi)</strong> - CSI driver that mounts the Nix store into pods</li>
         <li><strong>flake-compatish</strong> - Reads a flake this project does not own</li>
-        <li><strong>user-mode-nixos</strong> - NixOS integration tests on User-Mode Linux, no KVM required</li>
+        <li><strong>user-mode-nixos</strong> - NixOS integration tests on User-Mode Linux and QEMU, driven by one Python runner. Both runners behave the same inside and outside the build sandbox (guests get internet only outside it); the UML path needs no KVM.</li>
       </ul>
       <p>Each project keeps its own repository and history. The <strong>umbrella</strong> tool pins them
         to a known-good set of commits, so cross-project changes build and test together.</p>
@@ -562,9 +562,6 @@ type: cv
   <ul>
     <li><a href="https://github.com/lillecarl/dinix"><strong>dinix</strong></a> - Render dinit service configurations
       using Nix</li>
-    <li><a
-        href="https://github.com/lillecarl/registry/commit/96e3e3120f200dbf0c83cad2e2a3448f1acd0d8e"><strong>registry</strong></a>
-      - Nix derivations for all OpenTofu registry providers</li>
     <li><strong>RC-Butiken</strong> - C# sync daemon for 20,000+ SKUs from supplier to Shopify. SQLite state tracking
       with
       daily diffing to handle API rate limits. Built inventory/price change reports for strategic ordering and crawled
