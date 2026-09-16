@@ -23,7 +23,7 @@
       src = nixpkgs.lib.cleanSourceWith {
         src = ./.;
         filter = path: type:
-          !builtins.elem (baseNameOf path) [ ".direnv" ".jj" "public" ]
+          !builtins.elem (baseNameOf path) [ ".direnv" ".jj" "public" "__pycache__" ]
           && nixpkgs.lib.cleanSourceFilter path type;
       };
     in
@@ -43,17 +43,57 @@
             installPhase = "mv public $out";
           };
 
+          # The site as an agent reads it: for every sitemap page, a
+          # screen.png (light, full page), a dark.png (emulated
+          # prefers-color-scheme) and a print.pdf (print media -- the
+          # CV's print mode included). nix/render.py says why raw CDP.
+          views = pkgs.stdenv.mkDerivation {
+            name = "lillecarl-views";
+            src = site;
+            nativeBuildInputs = [
+              pkgs.chromium
+              pkgs.fontconfig
+              pkgs.dejavu_fonts
+              (pkgs.python3.withPackages (ps: [ ps.websockets ]))
+            ];
+            buildPhase = ''
+              export HOME=$TMPDIR
+              # No /etc/fonts in the sandbox: name the fonts, or text
+              # does not draw at all. The include is what maps the
+              # generic `monospace` the site asks for to a real face.
+              # This lives in buildPhase and not preBuild: a custom
+              # buildPhase replaces the default one, and the default
+              # is what runs preBuild.
+              export FONTCONFIG_FILE=$TMPDIR/fonts.conf
+              cat > $FONTCONFIG_FILE <<EOF
+              <fontconfig>
+                <include>${pkgs.fontconfig.out}/etc/fonts/fonts.conf</include>
+                <dir>${pkgs.dejavu_fonts}</dir>
+                <dir>${pkgs.noto-fonts}</dir>
+                <cachedir>$TMPDIR/fontcache</cachedir>
+              </fontconfig>
+              EOF
+              python ${./nix/render.py} . $out
+            '';
+            dontInstall = true;
+            dontFixup = true;
+          };
+
           default = site;
+
+          # Everything above, rendered for review: PDF and PNG.
+          render = pkgs.callPackage ./render.nix { inherit site; };
         });
 
       checks = forAllSystems (system:
+        let pkgs = nixpkgs-check.legacyPackages.${system}; in
         {
           # crate-ci/typos. _typos.toml carries the words the site
           # means to spell its own way.
-          typos = (nixpkgs-check.legacyPackages.${system}).stdenv.mkDerivation {
+          typos = pkgs.stdenv.mkDerivation {
             name = "typos-check";
             inherit src;
-            nativeBuildInputs = [ nixpkgs-check.legacyPackages.${system}.typos ];
+            nativeBuildInputs = [ pkgs.typos ];
             buildPhase = "typos .";
             installPhase = "touch $out";
           };

@@ -20,6 +20,9 @@ nix build --file . checks
 
 # Build for production
 nix build --file . site -o public
+
+# Render every page to PDF/PNG (headless chromium); for review
+nix build --file . render
 ```
 
 ## Architecture

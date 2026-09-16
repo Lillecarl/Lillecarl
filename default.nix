@@ -22,4 +22,5 @@ flake.outputs // {
   # and `nix build --file . checks`.
   site = flake.impure.packages.site;
   checks = flake.impure.checks;
+  render = flake.impure.packages.render;
 }
