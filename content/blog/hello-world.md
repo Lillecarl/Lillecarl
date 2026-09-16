@@ -3,6 +3,7 @@ title: "Hello world... Hello Carl!"
 date: 2026-01-25
 description: "First post. Why I made this site and what to expect."
 hidden: false
+authorship: "human"
 ---
 
 Finally got around to setting up a proper website. Built with Hugo, deployed via GitHub Actions, styled to be as minimal as possible.

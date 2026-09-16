@@ -3,6 +3,7 @@ title: "pyedit (super editing powers for agents)"
 date: 2026-09-15
 description: "Why I built pyedit: scripted edits for AI agents, staged in memory, merged by git, applied and undone as patches."
 hidden: false
+authorship: "assisted"
 ---
 
 As promised in the first post: an occasional opinion. This one comes with software.
