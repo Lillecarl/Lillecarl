@@ -418,6 +418,7 @@ type: cv
 
 <div class="nobreak-page">
   <h3><a href="https://github.com/nixidae/nixidae">nixidae</a></h3>
+  <p class="print-only">One checkout pinning my Nix + Python (+ Kubernetes) projects, so cross-project changes build and test together.</p>
   <div class="print-hide">
     <p>
       Umbrella project for Nix + Python, and Nix + Python + Kubernetes, tooling "and friends".
@@ -443,6 +444,7 @@ type: cv
 
 <div class="nobreak-page">
   <h3><a href="https://github.com/lillecarl/pyterm">pyterm</a></h3>
+  <p class="print-only">pymux, a tmux reimplementation in Python, and the terminal stack beneath it, tested against six real terminals.</p>
   <div class="print-hide">
     <p>
       Umbrella project for pymux—a souped-up tmux reimplementation in Python—and its stack: ptterm,
@@ -474,6 +476,7 @@ type: cv
 
 <div class="nobreak-page">
   <h3><a href="https://github.com/lillecarl/nix-csi">nix-csi</a></h3>
+  <p class="print-only">A CSI driver that mounts the Nix store into pods, replacing container images with store paths.</p>
   <div class="print-hide">
     <p>
       Kubernetes CSI driver that mounts the Nix store into pods, enabling container image replacement with Nix packages.
@@ -505,6 +508,7 @@ type: cv
 
 <div class="nobreak-page">
   <h3><a href="https://github.com/lillecarl/easykubenix">easykubenix</a></h3>
+  <p class="print-only">Kubernetes manifests and OpenTofu management — clusters and day2 — from the NixOS module system.</p>
   <div class="print-hide">
     <p>
       Kubernetes manifest generation using the NixOS module system. Composes
@@ -536,6 +540,7 @@ type: cv
 
 <div class="nobreak-page">
   <h3><a href="https://github.com/lillecarl/hetzkube">hetzkube</a></h3>
+  <p class="print-only">Production-grade Kubernetes on Hetzner, on a budget: ClusterAPI, NixOS nodes, no external load balancer.</p>
   <div class="print-hide">
     <p>
       LARPing production-grade Kubernetes on Hetzner on a strict budget. Full platform: ClusterAPI
@@ -584,6 +589,7 @@ type: cv
 
 <div class="nobreak-page">
   <h3><a href="https://github.com/lillecarl/fswiki">fswiki</a></h3>
+  <p class="print-only">A wiki that is a filesystem: a FUSE mount, with an ACL enforced by Postgres on every read.</p>
   <div class="print-hide">
     <p>
       A wiki that is a filesystem: a FUSE mount whose files are the documents, so vim, rg and every
@@ -618,6 +624,7 @@ type: cv
 
 <div class="nobreak-page">
   <h3><a href="https://github.com/lillecarl/pyedit">pyedit</a></h3>
+  <p class="print-only">A Python editing tool for AI agents: staged edits, git-merged scopes, apply and undo patches, no line numbers.</p>
   <div class="print-hide">
     <p>
       A Python editing tool for AI agents: an edit script runs against contextual VFSs—in-memory
@@ -657,6 +664,7 @@ type: cv
 
 <div class="nobreak-page">
   <h3><a href="https://github.com/lillecarl/pyjj">pyjj</a></h3>
+  <p class="print-only">Python bindings, CLI, and TUI for jj — an exercise in pyo3 and agent-driven development.</p>
   <div class="print-hide">
     <p>
       Python bindings, a CLI, and a Textual TUI for Jujutsu (jj). Mostly an exercise in pyo3 and
@@ -681,6 +689,7 @@ type: cv
 
 <div class="nobreak-page">
   <h3><a href="https://github.com/lillecarl/grpclib-transports">grpclib-transports</a></h3>
+  <p class="print-only">gRPC over stdio, SSH, Unix sockets, and multiprocessing pipes. Published library, with docs.</p>
   <div class="print-hide">
     <p>
       gRPC over arbitrary-ish transports: grpclib client and server sessions over custom asyncio
@@ -693,6 +702,7 @@ type: cv
 
 <div class="nobreak-page">
   <h3>Crossfaction Battlegrounds</h3>
+  <p class="print-only">First public crossfaction PvP for WoW private servers (~2012); Blizzard later shipped the idea officially.</p>
   <div class="print-hide">
     <p>
       First public implementation of crossfaction PvP queuing for World of Warcraft
