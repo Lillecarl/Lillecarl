@@ -523,6 +523,40 @@ type: cv
 </div>
 
 <div class="nobreak-page">
+  <h3><a href="https://github.com/lillecarl/fswiki">fswiki</a></h3>
+  <div class="print-hide">
+    <p>
+      A wiki that is a filesystem: a FUSE mount whose files are the documents, so vim, rg and every
+      tool you already own work with nothing to integrate. Permissions are enforced by the database
+      on every read—an NTFS-style ACL over an ltree path, evaluated by Postgres row-level security,
+      with no application tier that could forget to check.
+    </p>
+    <details>
+      <summary>Technical details</summary>
+      <p><strong>Architecture:</strong> PostgREST in front of Postgres and nothing else serving data; a
+        shared core (client, path naming, three-way merge, render pipeline); the mount runs on trio
+        via pyfuse3; the CLI covers status, diff, push, revert, merge, search, render and preview.</p>
+      <ul>
+        <li><strong>Saving is not publishing:</strong> writes through the mount become private drafts
+          until pushed; push three-way merges against the revision you actually read, so two people
+          editing one page get a conflict instead of a silent lost update (SVN-style commit mode).</li>
+        <li><strong>Forbidden is indistinguishable from missing:</strong> a page the ACL denies renders,
+          lists and collides exactly like a page that does not exist—the difference between the two is
+          itself a disclosure, and the ACL never makes it.</li>
+        <li><strong>Check an ACL by being someone else:</strong> read-only impersonation mounts—read-only
+          transaction, <code>ro</code> in the mount options, <code>0444</code> files—logged server-side before a
+          byte is served; borrow a membership to preview what a new engineer would see.</li>
+        <li><strong>Reads are audited by the request that serves them:</strong> document and audit row
+          commit in one transaction, so there is no window where one happens without the other;
+          cache-served opens queue locally and ship later.</li>
+      </ul>
+      <p><strong>Testing:</strong> 1,039 tests against real Postgres and PostgREST (nothing mocked), 91%
+        line coverage; the sandbox-safe half runs as a Nix check.</p>
+    </details>
+  </div>
+</div>
+
+<div class="nobreak-page">
   <h3>Crossfaction Battlegrounds</h3>
   <div class="print-hide">
     <p>
