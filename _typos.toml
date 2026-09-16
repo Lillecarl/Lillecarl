@@ -11,6 +11,10 @@ locale = "en-us"
 "AKS" = "AKS"
 # Small and medium-sized enterprise.
 "SME" = "SME"
+# Deliberate: the typo in the example quoted by the ghanix post.
+"tiemout" = "tiemout"
+# The passt network daemon, not a typo of "passed".
+"passt" = "passt"
 
 [files]
 # static/my.pub is an SSH public key: base64, not English.
