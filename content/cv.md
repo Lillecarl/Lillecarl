@@ -197,6 +197,13 @@ type: cv
     <details>
       <summary><strong>Key achievements:</strong></summary>
       <ul>
+        <li><strong>tofu-operator:</strong> Joins easykubenix and terranix, so Kubernetes and OpenTofu configuration
+          share one NixOS module system and can read each other's values. Runs in the cluster (kopf, kr8s), keeps
+          OpenTofu state in Kubernetes, and configures both the cluster and the applications on it, such as the
+          Keycloak clients that make OIDC work. An approval names the digest of the saved plan, so a stale approval
+          cannot apply a different plan. Providers come from Nix derivations generated for every version of every
+          OpenTofu registry provider on every platform, so it can configure anything the provider ecosystem
+          covers.</li>
         <li><strong>Argo CD at scale:</strong> One Application with 623 resources pushed the controller to 2.4 GB and
           caused etcd timeouts. Split delivery into per-component units: 928 objects across 32 Applications.</li>
         <li><strong>Keycloak as code:</strong> Realms, OIDC clients, groups and users as OpenTofu written in Nix,
@@ -210,8 +217,6 @@ type: cv
           and build-time checks validate dashboard JSON.</li>
         <li><strong>Apply cost:</strong> 209 CRDs were 42.6 of about 45 MB of rendered output and added 922 MiB to
           apiserver memory. A resourceVersion gate cut a steady-state apply of 1,250 objects from 72 s to 28 s.</li>
-        <li><strong>OpenTofu operator:</strong> kopf-based operator that runs day-2 OpenTofu inside the cluster, with
-          an approval step between plan and apply.</li>
         <li><strong>Components:</strong> Cilium (LB-IPAM, BGP), Traefik with Gateway API, CloudNativePG with barman
           backups to Ceph RGW, Rook-Ceph (block, file, object), Harbor, External Secrets, oauth2-proxy, Kyverno, Vertical
           Pod Autoscaler. Modules for AWS, Azure and OpenStack storage and cloud integration.</li>
