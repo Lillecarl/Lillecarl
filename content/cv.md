@@ -171,17 +171,21 @@ type: cv
     <li><strong>Nix</strong></li>
     <li>Helm</li>
     <li>OpenTofu</li>
-    <li>GitOps</li>
+    <li>Argo CD</li>
+    <li>Keycloak</li>
+    <li>Talos</li>
     <li>VictoriaMetrics</li>
     <li>VictoriaLogs</li>
     <li>OpenTelemetry</li>
     <li>Grafana</li>
   </ul>
   <p>
-    The complete Kubernetes experience in a bottle. A configuration management system built on the NixOS module
-    system: Nix and Helm inputs render to Kubernetes manifests and Terraform configuration. The rendered output goes
-    to a separate branch that GitOps deploys (the rendered manifests pattern), so every deploy is a commit you can
-    diff. It can also apply from a workstation.
+    The complete Kubernetes experience in a bottle. Rewrote Dynamist's Kustomize and Argo CD ApplicationSet platform
+    as about 85 typed components on the NixOS module system, through easykubenix. Helm charts are pinned by hash,
+    rendered into Nix and merged and type-checked with everything else. The output is Kubernetes manifests and OpenTofu
+    configuration. Manifests go to a per-environment branch that Argo CD deploys (the rendered manifests pattern), so
+    every deploy is a commit you can diff and revert. Bootstrap applies from a workstation. Proven on a live IPv6-only
+    Talos lab cluster.
   </p>
   <p>
     Built the observability stack: vmagent to VictoriaMetrics for metrics,
@@ -189,6 +193,31 @@ type: cv
     alert rules ship as code, and are checked against the upstream mixins so thresholds do not come from one
     cluster's numbers.
   </p>
+  <div class="print-hide">
+    <details>
+      <summary><strong>Key achievements:</strong></summary>
+      <ul>
+        <li><strong>Argo CD at scale:</strong> One Application with 623 resources pushed the controller to 2.4 GB and
+          caused etcd timeouts. Split delivery into per-component units: 928 objects across 32 Applications.</li>
+        <li><strong>Keycloak as code:</strong> Realms, OIDC clients, groups and users as OpenTofu written in Nix,
+          reconciled continuously with state kept in the cluster. Proven end to end with kube-apiserver OIDC login and
+          group claims.</li>
+        <li><strong>Cluster provisioning:</strong> Five IPv6-only Talos nodes as KubeVirt VMs from a Nix-generated
+          OpenTofu unit. The migration from the old tree gave byte-identical configuration and an empty
+          <code>tofu plan</code> against live state.</li>
+        <li><strong>Monitoring you can trust:</strong> 36 scrape jobs, 223 alert rules, 0 evaluation errors. A
+          verification tool runs every alert expression and dashboard query against the live backend (35 dashboards),
+          and build-time checks validate dashboard JSON.</li>
+        <li><strong>Apply cost:</strong> 209 CRDs were 42.6 of about 45 MB of rendered output and added 922 MiB to
+          apiserver memory. A resourceVersion gate cut a steady-state apply of 1,250 objects from 72 s to 28 s.</li>
+        <li><strong>OpenTofu operator:</strong> kopf-based operator that runs day-2 OpenTofu inside the cluster, with
+          an approval step between plan and apply.</li>
+        <li><strong>Components:</strong> Cilium (LB-IPAM, BGP), Traefik with Gateway API, CloudNativePG with barman
+          backups to Ceph RGW, Rook-Ceph (block, file, object), Harbor, External Secrets, oauth2-proxy, Kyverno, Vertical
+          Pod Autoscaler. Modules for AWS, Azure and OpenStack storage and cloud integration.</li>
+      </ul>
+    </details>
+  </div>
 </div>
 
 <div class="nobreak-page">
