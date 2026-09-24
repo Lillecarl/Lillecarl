@@ -293,7 +293,8 @@ type: cv
   <p>
     Consulting for Viaplay. Initiated and deployed Kubernetes for Media Asset
     Management. Managed both on-premise RKE2 and EKS clusters with supporting
-    services including Keycloak and observability tooling.
+    services including Keycloak and observability tooling. Application releases deployed from the developers' CI
+    pipelines with Helm, applied automatically and rolled back on failure.
   </p>
   <div class="print-hide">
     <details>
