@@ -164,6 +164,31 @@ type: cv
     <a href="https://github.com/nixidae/nixidae">nixidae</a>, an umbrella project for Nix, Python and
     Kubernetes tooling.
   </p>
+
+  <h4 class="no-margin-bottom">SOLID Kubernetes</h4>
+  <ul class="tags">
+    <li><strong>Kubernetes</strong></li>
+    <li><strong>Nix</strong></li>
+    <li>Helm</li>
+    <li>OpenTofu</li>
+    <li>GitOps</li>
+    <li>VictoriaMetrics</li>
+    <li>VictoriaLogs</li>
+    <li>OpenTelemetry</li>
+    <li>Grafana</li>
+  </ul>
+  <p>
+    The complete Kubernetes experience in a bottle. A configuration management system built on the NixOS module
+    system: Nix and Helm inputs render to Kubernetes manifests and Terraform configuration. The rendered output goes
+    to a separate branch that GitOps deploys (the rendered manifests pattern), so every deploy is a commit you can
+    diff. It can also apply from a workstation.
+  </p>
+  <p>
+    Built the observability stack: vmagent to VictoriaMetrics for metrics,
+    OpenTelemetry Collector to VictoriaLogs for logs, with log lines parsed into structured fields. Dashboards and
+    alert rules ship as code, and are checked against the upstream mixins so thresholds do not come from one
+    cluster's numbers.
+  </p>
 </div>
 
 <div class="nobreak-page">
