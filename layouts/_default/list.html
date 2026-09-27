@@ -1,6 +1,9 @@
 {{ define "main" }}
 <h1>{{ .Title }}</h1>
 {{ .Content }}
+{{- with .OutputFormats.Get "rss" }}
+<p><a href="{{ .RelPermalink }}">rss</a></p>
+{{- end }}
 <ul>
   {{- range where .Pages ".Params.hidden" "!=" true }}
   <li>
