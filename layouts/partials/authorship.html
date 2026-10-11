@@ -1,0 +1,10 @@
+{{- $a := . -}}
+{{- if eq $a "human" -}}
+<span class="authorship" title="human: a person wrote it">¯\_(^_^)_/¯ human</span>
+{{- else if eq $a "assisted" -}}
+<span class="authorship" title="assisted: AI drafted it, human rewrote it">⚙ assisted</span>
+{{- else if eq $a "vibed" -}}
+<span class="authorship" title="vibed: AI wrote it, human nodded">★ vibed</span>
+{{- else -}}
+<span class="authorship">{{ $a }}</span>
+{{- end -}}

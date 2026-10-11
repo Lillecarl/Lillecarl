@@ -1,7 +1,7 @@
 {{ define "main" }}
 <article>
   <h1>{{ .Title }}</h1>
-  {{- with .Params.authorship }}<p><small>authorship: {{ . }}</small></p>{{ end }}
+  {{- with .Params.authorship }}<p><small>authorship: {{ partial "authorship.html" . }}</small></p>{{ end }}
   {{ .Content }}
 </article>
 {{ end }}
